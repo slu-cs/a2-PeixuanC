@@ -28,7 +28,7 @@ const queries = [
   //Professor.find().where('courses').in(362),
 
   // What are all the ranks?
-  Professor.distinct('rank')
+  //Professor.distinct('rank')
 ];
 
 // Run the queries in parallel
