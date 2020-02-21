@@ -16,7 +16,7 @@ query.exec(function(error, professors) {
 const queries = [
 
   // What are names in alphabetical order?
-  Voter.find().sort('zip'),
+  Voter.find()
 
   // Who started most recently?
   //Professor.find().sort('-started').limit(1),
@@ -34,7 +34,7 @@ const queries = [
 // Run the queries in parallel
 Promise.all(queries)
   .then(function(results) {
-    console.log('zip in order: ', results[0].map(p => p.zip));
+    console.log('zip in order: ', results[0].length;
     //console.log('Started most recently: ', results[1].map(p => p.name));
   //  console.log('Started in 2003: ', results[2].map(p => p.name));
   //  console.log('Teaches 362: ', results[3].map(p => p.name));
