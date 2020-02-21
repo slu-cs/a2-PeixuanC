@@ -24,8 +24,9 @@ file.on('line', function(line) {
   }));
 });
 
-mongoose.connection.dropDatabase()
+
 const saves = voters.map(d => d.save());
+mongoose.connection.dropDatabase()
 
 Promise.all(saves)
   .then(() => console.log('All saved'))
