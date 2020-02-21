@@ -20,4 +20,4 @@ Voter.index({history: 1});
 
 
 
-module.exports = mongoose.model('Voter', Voters);
+module.exports = mongoose.model('Voter', Voter);
