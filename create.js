@@ -21,7 +21,7 @@ file.on('line', function(line) {
     last: columns[1],
     zip: columns[2],
     history:colums[3]
-  });
+  }));
 });
 
 mongoose.connection.dropDatabase()
