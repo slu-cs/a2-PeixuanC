@@ -17,3 +17,7 @@ Voter.index({first: 1});
 Voter.index({last: 1});
 Voter.index({zip: 1});
 Voter.index({history: 1});
+
+
+
+module.exports = mongoose.model('Voter', Voters);
