@@ -20,7 +20,7 @@ file.on('line', function(line) {
     first: columns[0],
     last: columns[1],
     zip: columns[2],
-    history:columns[3].slice[3]
+    history:columns[3].slice(3)
   }));
 });
 
