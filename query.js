@@ -21,7 +21,7 @@ const queries = [
   Voter.find().where('first').equals("STARR"),
 
 //How many people voted in the 2016 general election (GE16)?
-  Voter.find().where( { "authors": { "$regex": "GE16", "$options": "i" } },
+  Voter.find( { "authors": { "$regex": "GE16", "$options": "i" } },
     function(err,docs) {
     }).
 //What is the last-name that comes last in the county in alphabetical order?
