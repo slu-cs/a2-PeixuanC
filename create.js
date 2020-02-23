@@ -16,10 +16,10 @@ connect(); // To the database
 const voters = [];
 file.on('line', function(line) {
   const columns = line.split(',');
-  const str=columns[3];
+
   const election=[];
-  for(let i=0;i<str.length();i+=4){
-    election.push(str.substr(i,i+3));
+  for(let i=0;i<columns[3].length();i+=4){
+    election.push(columns[3].substr(i,i+3));
 
   }
 
