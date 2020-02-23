@@ -16,6 +16,7 @@ query.exec(function(error, professors) {
 const queries = [
 
   //How many registered voters live in the Canton zip code (13617)?
+
   Voter.find().where('zip').equals("13617"),
   //What are the full names of all the registered voters whose first-name is STARR?
   Voter.find().where('first').equals("STARR"),
@@ -25,6 +26,7 @@ const queries = [
   Voter.find().sort('-last').limit(1),
 
   Voter.distinct('zip'),
+  Voter.find()
 
 
 
@@ -38,5 +40,6 @@ Promise.all(queries)
     console.log('# of people voted in the 2016:', results[2].length);
    console.log('the last-name that comes last in the county in alphabetical order', results[3].map(p => p.last));
     console.log('Distinct zip: ', results[4].length);
+    console.log("all",results[5].length);
     mongoose.connection.close();
   }).catch(error => console.error(error.stack));
