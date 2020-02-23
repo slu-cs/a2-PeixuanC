@@ -21,10 +21,9 @@ const queries = [
   Voter.find().where('first').equals("STARR"),
 
 //How many people voted in the 2016 general election (GE16)?
-  Voter.find( { "authors": { "$regex": "GE16", "$options": "i" } },
-    function(err,docs) {
-    }).count(),
+  Voter.find().where('history').in("GE16"),
 //What is the last-name that comes last in the county in alphabetical order?
+Voter.find().sort.('-last').limit(1),
 
 
 
@@ -36,7 +35,7 @@ Promise.all(queries)
     console.log('# of voter of 13617: ', results[0]);
     console.log('full names of all the registered voters whose first-name is STARR: ', results[1].map(p => p.first+p.last));
     console.log('# of people voted in the 2016:', results[2]);
-  //  console.log('Teaches 362: ', results[3].map(p => p.name));
+   console.log('the last-name that comes last in the county in alphabetical order', results[3][]map(p => p.last));
   //  console.log('Distinct ranks: ', results[4]);
     mongoose.connection.close();
   }).catch(error => console.error(error.stack));
