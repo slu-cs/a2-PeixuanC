@@ -25,7 +25,7 @@ const queries = [
 //What is the last-name that comes last in the county in alphabetical order?
 Voter.find().sort('-last').limit(1),
 
-Voter.distinct('zip')
+Voter.distinct('zip').count(),
 
 
 
