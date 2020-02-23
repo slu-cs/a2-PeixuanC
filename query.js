@@ -16,7 +16,7 @@ query.exec(function(error, professors) {
 const queries = [
 
   // What are names in alphabetical order?
-  Voter.find().where('zip').euals("13617"),
+  Voter.find().where('zip').equals("13617"),
 
   // Who started most recently?
   //Professor.find().sort('-started').limit(1),
