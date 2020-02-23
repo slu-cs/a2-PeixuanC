@@ -15,27 +15,20 @@ query.exec(function(error, professors) {
 
 const queries = [
 
-  // What are names in alphabetical order?
+  //How many registered voters live in the Canton zip code (13617)?
   Voter.find().where('zip').equals("13617"),
+//What are the full names of all the registered voters whose first-name is STARR?
+  Voter.find().where('first').equals("STARR"),
 
-  // Who started most recently?
-  //Professor.find().sort('-started').limit(1),
+//How many people voted in the 2016 general election (GE16)?
 
-  // Who started in 2003?
-//  Professor.find().where('started').equals(2003),
-
-  // Who teaches 362?
-  //Professor.find().where('courses').in(362),
-
-  // What are all the ranks?
-  //Professor.distinct('rank')
 ];
 
 // Run the queries in parallel
 Promise.all(queries)
   .then(function(results) {
     console.log('# of voter of 13617: ', results[0].length);
-    //console.log('Started most recently: ', results[1].map(p => p.name));
+    console.log('full names of all the registered voters whose first-name is STARR: ', results[1].map(p => p.first+p.last));
   //  console.log('Started in 2003: ', results[2].map(p => p.name));
   //  console.log('Teaches 362: ', results[3].map(p => p.name));
   //  console.log('Distinct ranks: ', results[4]);
