@@ -21,7 +21,7 @@ const queries = [
   //What are the full names of all the registered voters whose first-name is STARR?
   Voter.find().where('first').equals("STARR"),
   //How many people voted in the 2016 general election (GE16)?
-  Voter.find({"history":/"GE16"/})
+  Voter.find({"history":/"GE16"/}),
   //What is the last-name that comes last in the county in alphabetical order?
   Voter.find().sort('-last').limit(1),
 
