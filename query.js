@@ -23,7 +23,7 @@ const queries = [
 //How many people voted in the 2016 general election (GE16)?
   Voter.find( { "authors": { "$regex": "GE16", "$options": "i" } },
     function(err,docs) {
-    }),
+    }).count(),
 //What is the last-name that comes last in the county in alphabetical order?
 
 
