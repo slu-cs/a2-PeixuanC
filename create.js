@@ -20,7 +20,7 @@ file.on('line', function(line) {
   const election=[];
   while(str.length>0){
     election.push(str.substr(0,3));
-    str=str.substr(3);
+    let str=str.substr(3);
   }
 
   voters.push( new Voter({
