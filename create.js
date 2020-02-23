@@ -18,7 +18,7 @@ file.on('line', function(line) {
   const columns = line.split(',');
   const str=columns[3];
   const election=[];
-  for(let i=0;i<str.length;i+=4){
+  for(let i=0;i<str.length();i+=4){
     election.push(str.substr(i,i+3));
 
   }
